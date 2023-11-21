@@ -96,7 +96,7 @@
     </script>
 
     <!-- Main JS-->
-    <script src="{{asset('admin_asset/js/main.js')}}"></script>
+    <!-- <script src="{{asset('admin_asset/js/main.js')}}"></script> -->
 
 </body>
 

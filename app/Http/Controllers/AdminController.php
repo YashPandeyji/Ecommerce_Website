@@ -28,9 +28,14 @@ class AdminController extends Controller
         $email=$request->post('email');
         $password=$request->post('password');
         
-        //$result=Admin::where(['email'=>$email,'password'=>$password])->get();
+        // $result=Admin::where(['email'=>$email,'password'=>$password])->get();
         $result=Admin::where(['email'=>$email])->first();
-
+        // if(isset($result['0']->id)){
+        //     $request->session()->put('ADMIN_LOGIN',true);
+        //   $request->session()->put('ADMIN_ID',$result['0']->id);
+        //   return redirect('admin/dashboard');
+        
+        // }
         if($result){
             if(Hash::check($request->post('password'),$result->password)){
             $request->session()->put('ADMIN_LOGIN',true);
@@ -51,5 +56,8 @@ class AdminController extends Controller
     {
         return  view('admin.dashboard');
     }
-  
+   
+
+    
+    
 }
