@@ -1,13 +1,13 @@
 @extends('admin/layout')
-@section('page_title','Manage_Category')
-@section('category_select','active')
+@section('page_title','Manage_Color')
+@section('color_select','active')
 
 
 @section('container')
 
-<h2 class="mb10">Manage Category</h2>
-<a href="{{url('admin/category')}}">
-    <button type="button" class="btn btn-outline-success">/Back</button>
+<h2 class="mb10">Manage Color</h2>
+<a href="{{url('admin/color')}}">
+    <button type="button" class="btn btn-outline-success">Back</button>
 </a>
 
     <div class="row m-t-30">
@@ -22,26 +22,18 @@
                                     <div class="card-body">
                                        
                                        
-                                        <form action="{{route('category.manage_category_process')}}" method="post" >
+                                        <form action="{{route('color.manage_color_process')}}" method="post" >
                                         @csrf
                                             <div class="form-group">
-                                                <label for="category_name"  class="control-label mb-1">Category Name</label>
-                                                <input id="category_name" value="{{$category_name}}" required name="category_name" type="text" class="form-control" aria-required="true" aria-invalid="false" ">
-                                                @error('category_name')
+                                                <label for="color"  class="control-label mb-1">Color</label>
+                                                <input id="color" value="{{$color}}" required name="color" type="text" class="form-control" aria-required="true" aria-invalid="false" ">
+                                                @error('color')
                                                 <div class="alert alert-danger">
                                                 {{$message}}
                                                 </div>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="category_slug" class="control-label mb-1">Category Slug</label>
-                                                <input id="category_slug" required value="{{$category_slug}}"  name="category_slug" type="text" class="form-control" aria-required="true" aria-invalid="false"">
-                                                @error('category_slug')
-                                                <div class="alert alert-danger">
-                                                {{$message}}
-                                                </div>
-                                                @enderror
-                                            </div>
+                                          
                                          
                                             
                                             

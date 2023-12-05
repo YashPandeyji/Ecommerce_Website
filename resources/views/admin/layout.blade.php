@@ -13,13 +13,18 @@
     <title>@yield('page_title')</title>
 
     <!-- Fontfaces CSS-->
+
+   
     <link href="{{asset('admin_asset/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin_asset/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    
     <link href="{{asset('admin_asset/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin_asset/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
     <link href="{{asset('admin_asset/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    
 
     <!-- Vendor CSS-->
     <!-- <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -32,6 +37,7 @@
 
     <!-- Main CSS-->
     <link href="{{asset('admin_asset/css/theme.css')}}" rel="stylesheet" media="all">
+
 
 </head>
 
@@ -60,16 +66,29 @@
                             <a href="{{url('admin/dashboard')}}">Dashboard</a>
                              
                          </li>
-                         <li >
-                            <a href="{{url('admin/category')}}">
-                                <i class="fas fa-tachometer-alt"></i>Category</a>
-                            
-                         </li>
-                         <li >
+                         <li class="@yield('category_select')">
+                            <a  href="{{url('admin/category')}}">
+                            <i class="fas fa-list"></i>Category</a>
+                           
+                        </li>
+                        <li class="@yield('coupon_select')">
                             <a href="{{url('admin/coupon')}}">
-                                <i class="fas fa-tachometer-alt"></i>Coupon</a>
+                                <i class="fas fa-tag"></i>Coupon</a>
                             
                          </li>
+                         <li class="@yield('size_select')">
+                            <a href="{{url('admin/size')}}">
+                                <i class="fas fa-window-maximize"></i>Size</a>
+                            
+                         </li>
+                         <li class="@yield('color_select')">
+                            <a href="{{url('admin/color')}}">
+                            <i class="	fa fa-pie-chart"></i>Color</a>
+                            
+                            <li class="@yield('product_select')">
+                            <a href="{{url('admin/product')}}">
+                            <i class="fa fa-product-hunt"></i>Product</a>
+                        </li>
                       
                      
                     </ul>
@@ -88,20 +107,33 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li >
+                        <li class="@yield('dashboard_select')" >
                             <a href="{{url('admin/dashboard')}}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                           
                         </li>
-                        <li>
+                        <li class="@yield('category_select')">
                             <a  href="{{url('admin/category')}}">
-                                <i class="fas fa-tachometer-alt"></i>Category</a>
+                            <i class="fas fa-list"></i>Category</a>
                            
                         </li>
-                        <li >
+                        <li class="@yield('coupon_select')">
                             <a href="{{url('admin/coupon')}}">
-                                <i class="fas fa-tachometer-alt"></i>Coupon</a>
+                                <i class="fas fa-tag"></i>Coupon</a>
                             
                          </li>
+                         <li class="@yield('size_select')">
+                            <a href="{{url('admin/size')}}">
+                                <i class="fas fa-window-maximize"></i>Size</a>
+                            
+                         </li>
+                         <li class="@yield('color_select')">
+                            <a href="{{url('admin/color')}}">
+                            <i class="	fa fa-pie-chart"></i>Color</a>
+                            
+                            <li class="@yield('product_select')">
+                            <a href="{{url('admin/product')}}">
+                            <i class="fa fa-product-hunt"></i>Product</a>
+                        </li>
                
                
                        
@@ -172,13 +204,18 @@
                                             <img src="{{asset('admin_asset/images/icon/YP.jpg')}}" alt="Yash Pandey" />
                                         </div>
                                         <div class="content">
+                                        
                                             <a class="js-acc-btn" href="#">Yash Pandey</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
-                                                
+                                            <div class="image">
+                                            <img src="{{asset('admin_asset/images/icon/YP.jpg')}}" alt="Yash Pandey" />
+                                        </div>
                                                 <div class="content">
+                                                
                                                     <h5 class="name">
+                                                    
                                                         <a href="#">Yash Pandey</a>
                                                     </h5>
                                                     <span class="email">pandeyji.yash@gmail.com</span>
